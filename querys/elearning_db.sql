@@ -1,0 +1,116 @@
+CREATE DATABASE ELEARNING;
+
+USE ELEARNING;
+
+CREATE TABLE ROL(
+  id_rol INT AUTO_INCREMENT,
+  nombre VARCHAR(30),
+  estado BIT,
+  CONSTRAINT PK_ROL PRIMARY KEY(id_rol)
+);
+
+CREATE TABLE USUARIO(
+  id_usuario INT AUTO_INCREMENT,
+  nombre VARCHAR(250),
+  identificacion VARCHAR(30),
+  constraseña VARCHAR(30),
+  genero VARCHAR(10),
+  pais VARCHAR(100),
+  lenguaje VARCHAR(10),
+  CONSTRAINT PK_USUARIO PRIMARY KEY (id_usuario)
+);
+
+CREATE TABLE HISTORY(
+  id_history INT AUTO_INCREMENT,
+  usuario INT,
+	fecha_ultimo_ingreso DATE,
+  ip VARCHAR(12),
+  os VARCHAR(10),
+  navegador VARCHAR(20),
+  CONSTRAINT PK_HISTORY PRIMARY KEY (id_history),
+  CONSTRAINT FK_HISTORY1 FOREIGN KEY (usuario) REFERENCES USUARIO(id_usuario)
+);
+
+CREATE TABLE TIPO_RECURSO(
+  id_tipo_recurso INT AUTO_INCREMENT,
+  nombre VARCHAR(100),
+  CONSTRAINT PK_TIPO_RECURSO PRIMARY KEY (id_tipo_recurso)
+);
+
+CREATE TABLE CURSO(
+  id_curso INT AUTO_INCREMENT,
+  nombre VARCHAR(30),
+  duracion INT,
+  fecha_inicio DATE,
+  fecha_final DATE,
+  estado INT,
+  CONSTRAINT PK_CURSO PRIMARY KEY (id_curso)
+);
+
+CREATE TABLE SEMANA(
+  id_semana INT AUTO_INCREMENT,
+  tema VARCHAR(30),
+  visible BIT,
+  estado BIT,
+  curso INT,
+  CONSTRAINT PK_SEMANA PRIMARY KEY (id_semana),
+  CONSTRAINT FK_SEMANA1 FOREIGN KEY (curso) REFERENCES CURSO(id_curso)
+);
+
+CREATE TABLE RECURSO(
+  id_recurso INT AUTO_INCREMENT,
+	nombre VARCHAR(30),
+	url VARCHAR(255),
+	tipo_recurso INT,
+	recurso_padre INT,
+	visible BIT,
+	secuencia INT,
+	notas VARCHAR(100),
+	estado BIT,
+	semana INT,
+	CONSTRAINT PK_RECURSO PRIMARY KEY(id_recurso),
+	CONSTRAINT FK_RECURSO1 FOREIGN KEY (tipo_recurso) REFERENCES TIPO_RECURSO(id_tipo_recurso),
+	CONSTRAINT FK_RECURSO2 FOREIGN KEY (semana) REFERENCES SEMANA(id_semana)
+);
+
+CREATE TABLE RECURSO_ROL(
+	id_recurso_rol INT AUTO_INCREMENT,
+	recurso INT,
+	rol INT,
+	estado BIT,
+	CONSTRAINT PK_RECURSO_ROL PRIMARY KEY (id_recurso_rol),
+	CONSTRAINT FK_RECURSO_ROL1 FOREIGN KEY (recurso) REFERENCES RECURSO(id_recurso),
+	CONSTRAINT FK_RECURSO_ROL2 FOREIGN KEY (rol) REFERENCES ROL(id_rol)
+);
+
+CREATE TABLE USUARIO_ROL(
+	id_usuario_rol INT AUTO_INCREMENT,
+	usuario INT,
+	rol INT,
+	estado BIT,
+	CONSTRAINT PK_USUARIO_ROL PRIMARY KEY (id_usuario_rol),
+	CONSTRAINT FK_USUARIO_ROL1 FOREIGN KEY (usuario) REFERENCES USUARIO(id_usuario),
+	CONSTRAINT FK_USUARIO_ROL2 FOREIGN KEY (rol) REFERENCES ROL(id_rol)
+);
+
+CREATE TABLE CURSO_ROL(
+	id_curso_rol INT AUTO_INCREMENT,
+  curso INT,
+  rol INT,
+  CONSTRAINT PK_CURSO_ROL PRIMARY KEY(id_curso_rol),
+  CONSTRAINT FK_CURSO_ROL1 FOREIGN KEY (curso) REFERENCES CURSO(id_curso),
+  CONSTRAINT FK_CURSO_ROL2 FOREIGN KEY (rol) REFERENCES ROL(id_rol)
+);
+
+
+
+CREATE TABLE MATRICULA(
+  id_matricula INT AUTO_INCREMENT,
+  periodo INT,
+  año INT,
+  curso INT,
+  usuario INT,
+  fecha_matricula DATETIME,
+  CONSTRAINT PK_MATRICULA PRIMARY KEY (id_matricula),
+  CONSTRAINT FK_MATRICULA1 FOREIGN KEY (curso) REFERENCES CURSO(id_curso)
+);
