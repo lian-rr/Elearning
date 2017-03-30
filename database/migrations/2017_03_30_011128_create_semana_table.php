@@ -33,7 +33,7 @@ class CreateSemanaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('semana');
+        Schema::dropIfExists('semana');
 
     }
 }

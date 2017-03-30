@@ -32,7 +32,7 @@ class CreateCursoRolTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('curso_rol');
+        Schema::dropIfExists('curso_rol');
 
     }
 }

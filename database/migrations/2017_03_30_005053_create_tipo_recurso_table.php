@@ -26,6 +26,6 @@ class CreateTipoRecursoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('tipo_recurso');
+        Schema::dropIfExists('tipo_recurso');
     }
 }

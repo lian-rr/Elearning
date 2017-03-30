@@ -33,7 +33,7 @@ class CreateRecursoRolTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('recurso_rol');
+        Schema::dropIfExists('recurso_rol');
 
     }
 }

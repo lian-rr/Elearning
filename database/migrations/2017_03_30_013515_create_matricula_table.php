@@ -35,7 +35,7 @@ class CreateMatriculaTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('matricula');
+        Schema::dropIfExists('matricula');
 
     }
 }

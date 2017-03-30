@@ -39,7 +39,7 @@ class CreateRecursoTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('recurso');
+        Schema::dropIfExists('recurso');
         
     }
 }

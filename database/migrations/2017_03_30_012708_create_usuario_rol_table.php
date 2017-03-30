@@ -33,7 +33,7 @@ class CreateUsuarioRolTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExist('usuario_rol');
+        Schema::dropIfExists('usuario_rol');
 
     }
 }
