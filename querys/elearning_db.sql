@@ -1,6 +1,6 @@
-CREATE DATABASE ELEARNING;
+CREATE DATABASE elearning;
 
-USE ELEARNING;
+USE elearning;
 
 CREATE TABLE ROL(
   id_rol INT AUTO_INCREMENT,
@@ -13,7 +13,7 @@ CREATE TABLE USUARIO(
   id_usuario INT AUTO_INCREMENT,
   nombre VARCHAR(250),
   identificacion VARCHAR(30),
-  constraseña VARCHAR(30),
+  contraseña VARCHAR(30),
   genero VARCHAR(10),
   pais VARCHAR(100),
   lenguaje VARCHAR(10),
