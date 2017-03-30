@@ -23,7 +23,7 @@ CREATE TABLE USUARIO(
 CREATE TABLE HISTORY(
   id_history INT AUTO_INCREMENT,
   usuario INT,
-	fecha_ultimo_ingreso DATE,
+  fecha_ultimo_ingreso DATE,
   ip VARCHAR(12),
   os VARCHAR(10),
   navegador VARCHAR(20),
