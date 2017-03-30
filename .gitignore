@@ -8,4 +8,4 @@ Homestead.json
 Homestead.yaml
 .env
 
-/querys
+/querys/*
