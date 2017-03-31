@@ -17,7 +17,7 @@
 
         {{--<title>@yield('title')</title>--}}
 
-        <title>{{ config('app.name', 'Elearning') }}</title>
+        <title>{{ config('app.name', 'Elearning') }} | @yield('title')</title>
 
         <!-- Bootstrap -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
