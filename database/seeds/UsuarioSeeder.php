@@ -14,7 +14,7 @@ class UsuarioSeeder extends Seeder
         DB::table('usuario')->insert([
            'nombre' => 'Administrador',
             'email' => 'admin@admin.ad',
-            'contrasena' => bcrypt('1234'),
+            'password' => bcrypt('1234'),
             'genero' => 'papu',
             'pais' => 'Costa Rica',
             'lenguaje' => 'español'

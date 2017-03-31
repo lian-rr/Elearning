@@ -4,6 +4,7 @@ namespace App\Model;
 
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Support\Facades\Hash;
 
 class Usuario extends Authenticatable
 {
@@ -19,7 +20,7 @@ class Usuario extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'nombre', 'email', 'contrasena', 'genero', 'pais', 'lenguaje',
+        'nombre', 'email', 'password', 'genero', 'pais', 'lenguaje',
     ];
 
     /**
@@ -28,6 +29,11 @@ class Usuario extends Authenticatable
      * @var array
      */
     protected $hidden = [
-        'contrasena', 'remember_token',
+        'password', 'remember_token',
     ];
+
+    public function setPasswordAttribute($value)
+    {
+        $this->attributes['password'] = bcrypt($value);
+    }
 }
