@@ -54,10 +54,47 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <label for="Country" class="col-md-4 control-label">Confirm Password</label>
 
                             <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                                <input id="Country" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="genre" class="col-md-4 control-label">Gender</label>
+                            <div class="col-md-6">
+                                <div class="radio col-md-6">
+                                    <label>
+                                        <input type="radio" name="gender" id="optionsRadios1" value="Masculine" checked>
+                                        Masculine
+                                    </label>
+                                </div>
+                                <div class="radio col-md-6">
+                                    <label>
+                                        <input type="radio" name="gender" id="optionsRadios2" value="Masculine">
+                                        Feminine
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="country" class="col-md-4 control-label">Country</label>
+
+                            <div class="col-md-6">
+                                <input id="country" type="text" class="form-control" name="country" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="language" class="col-md-4 control-label">Language</label>
+
+                            <div class="col-md-6">
+                                <select id="language" name="language" class="form-control" required>
+                                    <option value="english">English</option>
+                                </select>
+
                             </div>
                         </div>
 

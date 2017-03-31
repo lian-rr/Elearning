@@ -68,9 +68,9 @@ class RegisterController extends Controller
             'nombre' => $data['name'],
             'email' => $data['email'],
             'password' => $data['password'],
-            'genero' => 'test',
-            'pais' => 'test',
-            'lenguaje' => 'test',
+            'genero' => $data['gender'],
+            'pais' => $data['country'],
+            'lenguaje' => $data['language'],
         ]);
     }
 }
