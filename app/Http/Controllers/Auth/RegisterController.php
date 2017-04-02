@@ -75,6 +75,11 @@ class RegisterController extends Controller
         ]);
     }
 
+    /**
+     * It's call after the user is created
+     * @param Request $request
+     * @param $user
+     */
     protected function registered(Request $request, $user)
     {
         $usuario_rol = new UsuarioRol;

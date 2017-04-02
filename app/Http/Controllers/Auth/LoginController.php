@@ -42,6 +42,11 @@ class LoginController extends Controller
         $this->middleware('guest', ['except' => 'logout']);
     }
 
+    /**
+     * Login method
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Http\Response
+     */
     public function login(Request $request)
     {
         $this->validateLogin($request);
@@ -68,6 +73,10 @@ class LoginController extends Controller
         return $this->sendFailedLoginResponse($request);
     }
 
+    /**
+     * Validate the fields in the request.
+     * @param Request $request
+     */
     protected function validateLogin(Request $request)
     {
         $this->validate($request, [
@@ -79,6 +88,10 @@ class LoginController extends Controller
         ]);
     }
 
+    /**
+     * Save the log of user log in.
+     * @param Request $request
+     */
     protected function saveLog(Request $request)
     {
         $log = new Historial;
