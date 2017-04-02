@@ -33,12 +33,16 @@ class Usuario extends Authenticatable
     ];
 
 
-    public function historial(){
+    public function history(){
         return $this->hasMany('App\Model\Historial','usuario');
     }
 
     public function role(){
         return $this->hasOne('App\Model\UsuarioRol', 'usuario');
+    }
+
+    public function courses(){
+        return $this->hasMany('App\Model\Matricula', 'usuario');
     }
 
     public function setPasswordAttribute($value)

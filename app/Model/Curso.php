@@ -15,4 +15,7 @@ class Curso extends Model
         'fecha_inicio', 'fecha_final', 'estado'];
 
 
+    public function students(){
+        return $this->hasMany('/App/Model/Matricula', 'curso');
+    }
 }
