@@ -15,5 +15,19 @@ class RolSeeder extends Seeder
             'nombre' => 'Administrador',
             'estado' => true,
         ]);
+
+        DB::table('rol')->insert([
+            'nombre' => 'Moderator',
+            'estado' => true,
+        ]);
+
+        DB::table('rol')->insert([
+            'nombre' => 'Profesor',
+            'estado' => true,
+        ]);
+        DB::table('rol')->insert([
+            'nombre' => 'Student',
+            'estado' => true,
+        ]);
     }
 }

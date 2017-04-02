@@ -21,6 +21,8 @@ Route::get('users', 'UserController@all');
 
 Route::get('users/{id}','UserController@find');
 
+Route::get('users/{id}/history','UserController@historial');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index');

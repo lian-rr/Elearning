@@ -16,8 +16,8 @@ class CreateHistorialTable extends Migration
         Schema::create('historial', function(Blueprint $table){
             $table->increments('id_historial');
             $table->integer('usuario')->unsigned();
-            $table->date('fecha_ultimo_ingreso');
-            $table->string('ip',12);
+            $table->timestamp('fecha_ultimo_ingreso')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->string('ip',20);
             $table->string('os',10);
             $table->string('navegador',20);
         });

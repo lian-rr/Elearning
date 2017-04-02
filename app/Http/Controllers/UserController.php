@@ -15,4 +15,8 @@ class UserController extends Controller
     public function find($id){
         return Usuario::find($id);
     }
+
+    public function historial($id){
+        return Usuario::find($id)->historial;
+    }
 }

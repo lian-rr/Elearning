@@ -32,6 +32,11 @@ class Usuario extends Authenticatable
         'password', 'remember_token',
     ];
 
+
+    public function historial(){
+        return $this->hasMany('App\Model\Historial','usuario');
+    }
+
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);
