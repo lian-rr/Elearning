@@ -37,6 +37,10 @@ class Usuario extends Authenticatable
         return $this->hasMany('App\Model\Historial','usuario');
     }
 
+    public function role(){
+        return $this->hasOne('App\Model\UsuarioRol', 'usuario');
+    }
+
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = bcrypt($value);

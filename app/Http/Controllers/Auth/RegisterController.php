@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Model\Usuario;
+use App\Model\UsuarioRol;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
@@ -44,7 +45,7 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     protected function validator(array $data)
@@ -59,7 +60,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return Usuario
      */
     protected function create(array $data)
@@ -72,5 +73,15 @@ class RegisterController extends Controller
             'pais' => $data['country'],
             'lenguaje' => $data['language'],
         ]);
+    }
+
+    protected function registered(Request $request, $user)
+    {
+        $usuario_rol = new UsuarioRol;
+        $usuario_rol->usuario = $user->id_usuario;
+        $usuario_rol->rol = 4;
+        $usuario_rol->estado = true;
+
+        $usuario_rol->save();
     }
 }
