@@ -19,7 +19,7 @@ class CreateMatriculaTable extends Migration
             $table->integer('ano');
             $table->integer('curso')->unsigned();
             $table->integer('usuario')->unsigned();
-            $table->timestamp('fecha_matricula');
+            $table->timestamp('fecha_matricula')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
         
         Schema::table('matricula', function(Blueprint $table){
