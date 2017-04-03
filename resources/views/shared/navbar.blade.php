@@ -6,6 +6,11 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
     </a>
+    <div class="navbar-header">
+        <a href="{{url('/home')}}">
+            <span class="page-title">Elearning</span>
+        </a>
+    </div>
 
     <div class="top-right links">
         <ul>
@@ -15,7 +20,7 @@
                 <li>
                     <a href="{{ route('logout') }}"
                        onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
+                       document.getElementById('logout-form').submit();">
                         Logout
                     </a>
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
