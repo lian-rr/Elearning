@@ -28,4 +28,8 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
-Route::get('/courses', 'CursoController@view');
+//Return courses view
+Route::get('/courses', 'CursoController@courses');
+
+//Return a course view
+Route::get('/courses/{id}','CursoController@course');

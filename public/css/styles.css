@@ -37,6 +37,38 @@ html, body {
     font-size: 84px;
 }
 
+.section-header{
+    border-bottom: 2px solid;
+    margin-bottom: 1%;
+    padding-left: 1%;
+}
+
+.section-header > h1.section-title{
+    padding-bottom: 0.5%;
+    margin-bottom: 0;
+}
+
+.box.box-solid>.box-header>.box-tools .btn{
+    font-size: larger;
+}
+
+.box.box-solid>.box-header a:hover{
+    background: none;
+}
+
+a.btn.full-width{
+    width: 100%;
+}
+
+span.field-title{
+    font-weight: bold;
+}
+
+span.field-value{
+    font-style: italic;
+    font-weight: bold;
+}
+
 nav.navbar{
     padding: 0.5%;
 }

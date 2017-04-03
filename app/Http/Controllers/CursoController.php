@@ -8,8 +8,16 @@ use Illuminate\Http\Request;
 class CursoController extends Controller
 {
 
-    public function view(){
-        return view('courses');
+    /**
+     * Return view with the courses data
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function courses(){
+        return view('courses', ['courses' => $this->list()->where('estado', 'equal',true)]);
+    }
+
+    public function course($id){
+        return $this->find($id);
     }
 
     /**

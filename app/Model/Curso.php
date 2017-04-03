@@ -11,7 +11,7 @@ class Curso extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['nombre', 'duracion',
+    protected $fillable = ['nombre', 'descripcion', 'duracion',
         'fecha_inicio', 'fecha_final', 'estado'];
 
 
