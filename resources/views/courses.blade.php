@@ -19,7 +19,5 @@
                     @endcomponent
             @endforeach
         </div>
-
-
     </div>
 @endsection
