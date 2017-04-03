@@ -37,6 +37,16 @@ html, body {
     font-size: 84px;
 }
 
+nav.navbar{
+    padding: 0.5%;
+}
+
+a.page-title{
+    margin-left: 20%;
+    text-decoration: none;
+    font-size: x-large;
+}
+
 
 .links > ul > li{
     display: inline;

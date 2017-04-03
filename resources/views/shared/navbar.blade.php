@@ -7,8 +7,8 @@
         <span class="icon-bar"></span>
     </a>
     <div class="navbar-header">
-        <a href="{{url('/home')}}">
-            <span class="page-title">Elearning</span>
+        <a class="page-title" href="{{url('/home')}}">
+            <span>Elearning</span>
         </a>
     </div>
 
