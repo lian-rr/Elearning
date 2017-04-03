@@ -34,7 +34,7 @@
 
                 <div class="col-md-3">
                     <span class="field-title">Duration:</span>
-                    <span class="field-value">{{$duration}}</span>
+                    <span class="field-value">{{$duration.' weeks'}}</span>
                 </div>
 
                 <div class="col-md-3">
