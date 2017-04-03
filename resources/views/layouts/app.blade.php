@@ -27,6 +27,7 @@
 
         <!-- Style -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+        <link href="{{ asset('css/template.css') }}" rel="stylesheet">
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
 
     </head>
@@ -45,6 +46,7 @@
                 crossorigin="anonymous"></script>
 
         <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{asset('js/template.js')}}"></script>
         <script src="{{ asset('js/bundle.js') }}"></script>
     </body>
 </html>

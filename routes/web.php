@@ -25,4 +25,7 @@ Route::get('users/{id}/history','UserController@historial');
 
 Auth::routes();
 
+
 Route::get('/home', 'HomeController@index');
+
+Route::get('/courses', 'CursoController@view');

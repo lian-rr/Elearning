@@ -7,6 +7,11 @@ use Illuminate\Http\Request;
 
 class CursoController extends Controller
 {
+
+    public function view(){
+        return view('courses');
+    }
+
     /**
      * Return all courses.
      * @return \Illuminate\Database\Eloquent\Collection|static[]

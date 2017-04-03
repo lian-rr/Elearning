@@ -16,7 +16,9 @@
         <ul>
             @if (Auth::check())
                 {{--TODO  Find a better way of doing this--}}
-
+                <li>
+                    <a href="{{url('/courses')}}">Courses</a>
+                </li>
                 <li>
                     <a href="{{ route('logout') }}"
                        onclick="event.preventDefault();
