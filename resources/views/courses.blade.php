@@ -2,8 +2,12 @@
 @section('title', 'Courses')
 @section('content')
     <div class="container">
-        <div class="section-header">
-            <h1 class="section-title">Courses</h1>
+        <div class="section-header row">
+            <h1 class="section-title col-sm-6 col-md-9">Courses</h1>
+            <a class="col-sm-6 col-md-2 btn btn-success" href="{{url('/courses/course')}}">
+                New Course
+                <i class="fa fa-plus" aria-hidden="true"></i>
+            </a>
         </div>
 
         <div class="section-body">

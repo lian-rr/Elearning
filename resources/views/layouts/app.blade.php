@@ -33,8 +33,10 @@
     </head>
     <body>
         @include('shared.navbar')
+
         @yield('content')
-        @include('shared.footer')
+
+        {{--@include('shared.footer')--}}
 
         <!-- Scripts -->
         <script

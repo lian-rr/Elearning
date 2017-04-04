@@ -24,11 +24,11 @@
             </div>
             <div class="row">
                 <div class="col-md-3">
-                    <span class="field-title">Starting Date:</span>
+                    <span class="field-title">Initial Date:</span>
                     <span class="field-value">{{$start_date}}</span>
                 </div>
                 <div class="col-md-3">
-                    <span class="field-title">Ending Date:</span>
+                    <span class="field-title">Final Date:</span>
                     <span class="field-value">{{$end_date}}</span>
                 </div>
 

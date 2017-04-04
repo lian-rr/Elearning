@@ -48,6 +48,19 @@ html, body {
     margin-bottom: 0;
 }
 
+.section-header > a.btn{
+    margin-top: 2%;
+    margin-left: 6%;
+}
+
+.section-body > form#new-course .left-column{
+    margin-top: 2%;
+}
+
+.section-body > form#new-course .right-column{
+    margin-top: 1%;
+}
+
 .box.box-solid>.box-header>.box-tools .btn{
     font-size: larger;
 }

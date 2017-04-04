@@ -28,8 +28,15 @@ Auth::routes();
 
 Route::get('/home', 'HomeController@index');
 
+
 //Return courses view
 Route::get('/courses', 'CursoController@courses');
 
+//return new Course view
+Route::get('/courses/course', 'CursoController@new');
+
+Route::post('/courses/course', 'CursoController@insert');
+
 //Return a course view
 Route::get('/courses/{id}','CursoController@course');
+
