@@ -28,7 +28,7 @@ Route::get('users', 'UserController@all');
 Route::get('users/{id}','UserController@find');
 
 //Return the user's login history
-Route::get('users/{id}/history','UserController@historial');
+Route::get('users/{id}/history','UserController@history');
 
 
 

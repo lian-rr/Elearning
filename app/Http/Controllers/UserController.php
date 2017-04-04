@@ -31,7 +31,7 @@ class UserController extends Controller
      * @param $id
      * @return mixed
      */
-    public function historial($id){
+    public function history($id){
         return Usuario::find($id)->historial;
     }
 
