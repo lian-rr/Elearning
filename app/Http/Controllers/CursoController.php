@@ -27,7 +27,8 @@ class CursoController extends Controller
      */
     public function course($id)
     {
-        return $this->find($id);
+        return view('courses.course', ['course' => $this->find($id)]);
+
     }
 
     /**

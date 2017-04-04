@@ -38,8 +38,8 @@ html, body {
 }
 
 .section-header{
-    border-bottom: 2px solid;
-    margin-bottom: 1%;
+    border-bottom: 4px solid;
+    margin-bottom: 2%;
     padding-left: 1%;
 }
 
@@ -51,6 +51,21 @@ html, body {
 .section-header > a.btn{
     margin-top: 2%;
     margin-left: 6%;
+}
+
+#course > .section-body > .row{
+    margin-bottom: 2%;
+}
+#course > .section-body > .description{
+    text-align: justify;
+}
+
+#course > .resources{
+
+}
+
+#course > .resources > .resources-header{
+    border-bottom: 2px solid;
 }
 
 .section-body > form#new-course .left-column{
