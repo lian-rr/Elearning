@@ -16,17 +16,20 @@ Route::get('/', function () {
 });
 
 
-
-Route::get('users', 'UserController@all');
-
-Route::get('users/{id}','UserController@find');
-
-Route::get('users/{id}/history','UserController@historial');
-
 Auth::routes();
 
-
 Route::get('/home', 'HomeController@index');
+
+
+//List all users.
+Route::get('users', 'UserController@all');
+
+//Return the user information
+Route::get('users/{id}','UserController@find');
+
+//Return the user's login history
+Route::get('users/{id}/history','UserController@historial');
+
 
 
 //Return courses view

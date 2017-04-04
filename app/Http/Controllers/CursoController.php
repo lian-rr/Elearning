@@ -15,7 +15,7 @@ class CursoController extends Controller
      */
     public function courses()
     {
-        return view('courses',
+        return view('courses.courses',
             ['courses' => $this->list()->where('estado', 'equal', true)]);
     }
 
@@ -36,7 +36,7 @@ class CursoController extends Controller
      */
     public function new()
     {
-        return view('newCourse');
+        return view('courses.newCourse');
     }
 
 
@@ -70,6 +70,7 @@ class CursoController extends Controller
 
         return redirect('/courses');
     }
+
 
     /**
      * Update a course information.
@@ -115,6 +116,12 @@ class CursoController extends Controller
         ]);
     }
 
+    /**
+     * Return the difference in weeks between two dates.
+     * @param $date1
+     * @param $date2
+     * @return float
+     */
     private function datediffInWeeks($date1, $date2)
     {
         if ($date1 > $date2)
