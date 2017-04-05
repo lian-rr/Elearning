@@ -21,6 +21,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index');
 
 
+// ----------------------------------------USERS-----------------------------------------
+
 //List all users.
 Route::get('users', 'UserController@all');
 
@@ -30,7 +32,7 @@ Route::get('users/{id}','UserController@find');
 //Return the user's login history
 Route::get('users/{id}/history','UserController@history');
 
-
+// ----------------------------------------COURSES-----------------------------------------
 
 //Return courses view
 Route::get('/courses', 'CursoController@courses');
@@ -43,3 +45,6 @@ Route::post('/courses/course', 'CursoController@insert');
 //Return a course view
 Route::get('/courses/{id}','CursoController@course');
 
+//-------------------------------------------MATRICULA-----------------------------------------
+
+Route::get('/courses/{id}/students', 'MatriculaController@enrolledUsers');

@@ -60,12 +60,21 @@ html, body {
     text-align: justify;
 }
 
-#course > .resources{
+#course > .body{
 
 }
 
-#course > .resources > .resources-header{
+#course > .body > .resources-section > .resources-header{
     border-bottom: 2px solid;
+}
+
+#course > .body > .utilities{
+
+}
+
+#course > .body > .utilities .utilities-header{
+    border-bottom: 2px solid;
+    margin-bottom: 2%;
 }
 
 .section-body > form#new-course .left-column{

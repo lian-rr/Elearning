@@ -27,15 +27,23 @@
             </div>
         </div>
 
-        <div class="resources container">
-            <div class="resources-header col-md-10 col-md-offset-1">
-                <h2 class="resource-collection-title">Resources</h2>
+        <div class="body">
+            <div class="resources-section container col-md-10">
+                <div class="resources-header">
+                    <h2 class="resource-collection-title">Resources</h2>
+                </div>
+
+                <div class="resources-body row">
+                    {{--TODO Resorces component. Check courses/courses.blade.php and components/box.blade.php--}}
+                </div>
             </div>
 
-            <div class="resources-body row">
 
+            <div class="utilities col-md-2">
+                @component('components.utilities',['id' => $course->id_curso])
+                    @endcomponent
             </div>
-
         </div>
+
     </div>
 @endsection
