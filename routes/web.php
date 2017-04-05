@@ -47,4 +47,8 @@ Route::get('/courses/{id}','CursoController@course');
 
 //-------------------------------------------MATRICULA-----------------------------------------
 
+//Return list of users enrolled in a course.
 Route::get('/courses/{id}/students', 'MatriculaController@enrolledUsers');
+
+// TODO change to post
+Route::get('/courses/{id}/enroll', 'MatriculaController@enroll');

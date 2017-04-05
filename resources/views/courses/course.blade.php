@@ -3,7 +3,9 @@
 @section('content')
     <div id="course" class="section container">
         <div class="section-header row">
-            <h1 class="section-title">{{$course->nombre}}</h1>
+            <h1 class="section-title  col-sm-6 col-md-9">{{$course->nombre}}</h1>
+            {{--<a class="col-sm-6 col-md-2 btn btn-success" href="#">--}}
+            <a href="{{url('/courses/'.$course->id_curso.'/enroll')}}" id="enroll" class="btn btn-success col-sm-6 col-md-2">Enroll</a>
         </div>
 
         <div class="section-body">

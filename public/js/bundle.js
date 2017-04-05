@@ -31,6 +31,10 @@ $(document).ready(function () {
             }
         });
     });
+
+    $('#enroll').click(function (e) {
+        //TODO open modal. Probably
+    });
 });
 
 

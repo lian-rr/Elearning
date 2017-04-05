@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Model\Curso;
 use App\Model\Matricula;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class MatriculaController extends Controller
@@ -32,9 +33,9 @@ class MatriculaController extends Controller
         return view('', []);
     }
 
-    public function enrol($user)
+    public function enroll($id)
     {
-
+        dd(Auth::user()->id_usuario);
     }
 
 
