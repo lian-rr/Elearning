@@ -53,26 +53,26 @@ html, body {
     margin-left: 6%;
 }
 
-#course > .section-body > .row{
+.section > .section-body > .row{
     margin-bottom: 2%;
 }
-#course > .section-body > .description{
+.section > .section-body > .description{
     text-align: justify;
 }
 
-#course > .body{
+.section > .body{
 
 }
 
-#course > .body > .resources-section > .resources-header{
+.section > .body > .body-section > .body-header{
     border-bottom: 2px solid;
 }
 
-#course > .body > .utilities{
+.section > .body > .utilities{
 
 }
 
-#course > .body > .utilities .utilities-header{
+.section > .body > .utilities .utilities-header{
     border-bottom: 2px solid;
     margin-bottom: 2%;
 }

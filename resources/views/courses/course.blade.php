@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('title', $course->nombre)
 @section('content')
-    <div id="course" class="container">
+    <div id="course" class="section container">
         <div class="section-header row">
             <h1 class="section-title">{{$course->nombre}}</h1>
         </div>
@@ -28,12 +28,12 @@
         </div>
 
         <div class="body">
-            <div class="resources-section container col-md-10">
-                <div class="resources-header">
-                    <h2 class="resource-collection-title">Resources</h2>
+            <div class="body-section container col-md-10">
+                <div class="body-header">
+                    <h2 class="body-collection-title">Resources</h2>
                 </div>
 
-                <div class="resources-body row">
+                <div class="body-body row">
                     {{--TODO Resorces component. Check courses/courses.blade.php and components/box.blade.php--}}
                 </div>
             </div>
