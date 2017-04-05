@@ -19,6 +19,7 @@ class CreateMatriculaTable extends Migration
             $table->integer('ano');
             $table->integer('curso')->unsigned();
             $table->integer('usuario')->unsigned();
+            $table->float('nota');
             $table->timestamp('fecha_matricula')->default(DB::raw('CURRENT_TIMESTAMP'));
         });
         

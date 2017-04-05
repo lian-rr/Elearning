@@ -15,7 +15,8 @@ class MatriculaSeeder extends Seeder
             'periodo' => 1,
             'ano' => 2017,
             'curso' => 1,
-            'usuario' => 1
+            'usuario' => 1,
+            'nota' => 98,
         ]);
     }
 }
