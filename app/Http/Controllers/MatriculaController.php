@@ -20,10 +20,10 @@ class MatriculaController extends Controller
     public function enrolledUsers($id)
     {
         $users = DB::table('matricula')
-            ->where('curso','=',$id)
+            ->where('curso', '=', $id)
             ->join('usuario', 'matricula.usuario', '=', 'usuario.id_usuario')
-            ->select('matricula.periodo','matricula.ano', 'matricula.nota', 'usuario.id_usuario',
-                'usuario.nombre','usuario.genero', 'usuario.pais', 'usuario.lenguaje')
+            ->select('matricula.periodo', 'matricula.ano', 'matricula.nota', 'usuario.id_usuario',
+                'usuario.nombre', 'usuario.genero', 'usuario.pais', 'usuario.lenguaje')
             ->get();
 
         return view('enrolled', [
@@ -34,9 +34,26 @@ class MatriculaController extends Controller
         ]);
     }
 
-    public function allUsers($course)
+    /**
+     * Return students that are not enrolled in the course
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
+    public function allUsers($id)
     {
-        return view('', []);
+        $users = DB::table('usuario')
+            ->where('curso', '=', $id)
+            ->leftJoin('matricula', 'usuario.id_usuario', '!=', 'matricula.usuario')
+            ->select('usuario.id_usuario', 'usuario.nombre', 'usuario.genero',
+                'usuario.pais', 'usuario.lenguaje')
+            ->get();
+
+        return view('enroll', [
+            'course' => $id,
+            'course_name' => Curso::find($id)->nombre,
+            'users' => $users,
+
+        ]);
     }
 
     /**
@@ -50,7 +67,7 @@ class MatriculaController extends Controller
         $this->validator($request->all())->validate();
         $this->create($id, Auth::user()->id_usuario, $request->all());
 
-        return redirect('/courses/'.$id);
+        return redirect('/courses/' . $id);
     }
 
     /**

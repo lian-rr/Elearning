@@ -4,10 +4,9 @@
     <div id="course" class="section container">
         <div class="section-header row">
             <h1 class="section-title  col-sm-6 col-md-9">{{$course->nombre}}</h1>
-            {{--<a href="{{url('/courses/'.$course->id_curso.'/enroll')}}" id="enroll"--}}
-            {{--class="btn btn-success col-sm-6 col-md-2">Enroll</a>--}}
             <a id="enroll" role="button"
-               class="btn btn-success col-sm-6 col-md-2">Enroll</a>
+               class="btn btn-success col-sm-6 col-md-2"><i class="fa fa-check" aria-hidden="true"></i>
+                Enroll</a>
         </div>
 
         <div class="section-body">
