@@ -34,7 +34,8 @@
                                 <td>{{$user->genero}}</td>
                                 <td>{{$user->pais}}</td>
                                 <td>{{$user->lenguaje}}</td>
-                                <td><a href="#" class="btn btn-success">Enroll</a></td>
+                                <td><a id="enrollUser" role="button" data-content="{{$user->id_usuario}}"
+                                       class="btn btn-success">Enroll</a></td>
                             </tr>
                         @endforeach
                         </tbody>
@@ -49,4 +50,14 @@
             </div>
         </div>
     </div>
+
+    <div class="modal fade" id="enrollModal" tabindex="-1" role="dialog" aria-labelledby="enrollModal">
+        @component('components.modals.enroll',['course_id' => $course,
+         'course_name' => $course_name,
+         'current_user' => false,
+         '',
+        ])
+        @endcomponent
+    </div>
+
 @endsection

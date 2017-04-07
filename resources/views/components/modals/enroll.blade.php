@@ -6,6 +6,7 @@
             <h4 class="modal-title" id="myModalLabel">Enroll in {{$course_name}} course.</h4>
         </div>
 
+
         <form class="form-horizontal" action="{{url('/courses/'.$course_id.'/enroll')}}" role="form" method="POST">
             {{ csrf_field() }}
             <div class="modal-body">
@@ -33,10 +34,14 @@
                 <div class="form-group">
                     <label for="session" class="col-md-4 control-label">Session</label>
                     <div class="col-md-6">
-                        <input id="session" type="number" class="form-control" name="session" value="1" min="1" max="4" required>
+                        <input id="session" type="number" class="form-control" name="session" value="1" min="1" max="4"
+                               required>
                     </div>
                 </div>
 
+                @if(!$current_user)
+                    <input id="user" type="hidden" class="form-control" name="user">
+                @endif
 
             </div>
             <div class="modal-footer">

@@ -43,7 +43,8 @@ class MatriculaController extends Controller
     {
         $users = DB::table('usuario')
             ->where('curso', '=', $id)
-            ->leftJoin('matricula', 'usuario.id_usuario', '!=', 'matricula.usuario')
+            ->leftJoin('matricula', 'usuario.id_usuario', '=', 'matricula.usuario')
+            ->whereNull('matricula.usuario')
             ->select('usuario.id_usuario', 'usuario.nombre', 'usuario.genero',
                 'usuario.pais', 'usuario.lenguaje')
             ->get();
@@ -52,12 +53,11 @@ class MatriculaController extends Controller
             'course' => $id,
             'course_name' => Curso::find($id)->nombre,
             'users' => $users,
-
         ]);
     }
 
     /**
-     * Enroll the current user
+     * Enroll a user
      * @param $id
      * @param Request $request
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
@@ -65,10 +65,11 @@ class MatriculaController extends Controller
     public function enroll($id, Request $request)
     {
         $this->validator($request->all())->validate();
-        $this->create($id, Auth::user()->id_usuario, $request->all());
+        $this->create($id, (isset($request->user)) ? $request->user : Auth::user()->id_usuario, $request->all());
 
-        return redirect('/courses/' . $id);
+        return redirect((isset($request->user)) ? '/courses/' . $id . '/nenroll' : '/courses/' . $id);
     }
+
 
     /**
      * Validate the data comming from the client.

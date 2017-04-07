@@ -53,6 +53,7 @@
     <div class="modal fade" id="enrollModal" tabindex="-1" role="dialog" aria-labelledby="enrollModal">
         @component('components.modals.enroll',['course_id' => $course->id_curso,
          'course_name' => $course->nombre,
+         'current_user' => true,
         ])
         @endcomponent
     </div>

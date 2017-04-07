@@ -53,6 +53,5 @@ Route::get('/courses/{id}/students', 'MatriculaController@enrolledUsers');
 //Return all users that are not enrolled in the course
 Route::get('/courses/{id}/nenroll','MatriculaController@allUsers');
 
-//Enroll the current user
+//Enroll a user
 Route::post('/courses/{id}/enroll', 'MatriculaController@enroll');
-

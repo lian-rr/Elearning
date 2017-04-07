@@ -32,9 +32,15 @@ $(document).ready(function () {
         });
     });
 
+    $('#enrollUser').click(function (e) {
+        var modal = $('#enrollModal');
+        modal.find('#user').val($(this).attr('data-content'));
+        modal.modal('show');
+    });
+
     $('#enroll').click(function (e) {
         $('#enrollModal').modal('show');
-    });
+    })
 });
 
 
