@@ -24,14 +24,16 @@
                             <th>Gender</th>
                             <th>Country</th>
                             <th>Language</th>
+                            <th>Year/Session</th>
                             <th>Score</th>
                         </tr>
                         @foreach($users as $user)
                             <tr>
-                                <td>{{$user->periodo}}</td>
+                                <td>{{$user->nombre}}</td>
                                 <td>{{$user->genero}}</td>
                                 <td>{{$user->pais}}</td>
                                 <td>{{$user->lenguaje}}</td>
+                                <td>{{$user->ano.'/'.$user->periodo}}</td>
                                 <td>{{$user->nota}}</td>
                             </tr>
                         @endforeach
