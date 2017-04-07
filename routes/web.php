@@ -51,4 +51,4 @@ Route::get('/courses/{id}','CursoController@course');
 Route::get('/courses/{id}/students', 'MatriculaController@enrolledUsers');
 
 // TODO change to post
-Route::get('/courses/{id}/enroll', 'MatriculaController@enroll');
+Route::post('/courses/{id}/enroll', 'MatriculaController@enroll');

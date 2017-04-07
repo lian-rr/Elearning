@@ -7,10 +7,16 @@ use App\Model\Matricula;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class MatriculaController extends Controller
 {
 
+    /**
+     * Return list of the enrolled users.
+     * @param $id
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function enrolledUsers($id)
     {
         $users = DB::table('matricula')
@@ -33,9 +39,47 @@ class MatriculaController extends Controller
         return view('', []);
     }
 
-    public function enroll($id)
+    /**
+     * Enroll the current user
+     * @param $id
+     * @param Request $request
+     * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
+     */
+    public function enroll($id, Request $request)
     {
-        dd(Auth::user()->id_usuario);
+        $this->validator($request->all())->validate();
+        $this->create($id, Auth::user()->id_usuario, $request->all());
+
+        return redirect('/courses/'.$id);
+    }
+
+    /**
+     * Validate the data comming from the client.
+     * @param array $data
+     * @return mixed
+     */
+    protected function validator(array $data)
+    {
+        return Validator::make($data, [
+            'year' => 'required|numeric',
+            'session' => 'required|numeric'
+        ]);
+    }
+
+    /**
+     * Enroll a student.
+     * @param array $data
+     * @return mixed
+     */
+    protected function create($id, $user, array $data)
+    {
+        return Matricula::create([
+            'periodo' => $data['session'],
+            'ano' => $data['year'],
+            'curso' => $id,
+            'usuario' => $user,
+            'nota' => 0,
+        ]);
     }
 
 

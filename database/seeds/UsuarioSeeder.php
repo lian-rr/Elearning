@@ -19,5 +19,14 @@ class UsuarioSeeder extends Seeder
             'pais' => 'Costa Rica',
             'lenguaje' => 'español'
         ]);
+
+        DB::table('usuario')->insert([
+            'nombre' => 'Student',
+            'email' => 'est@est.es',
+            'password' => bcrypt('1234'),
+            'genero' => 'papu2',
+            'pais' => 'Costa Rica',
+            'lenguaje' => 'español'
+        ]);
     }
 }

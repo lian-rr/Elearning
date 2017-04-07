@@ -16,5 +16,11 @@ class UsuarioRoleSeeder extends Seeder
             'rol' => 1,
             'estado' => true,
         ]);
+
+        DB::table('usuario_rol')->insert([
+            'usuario' => 2,
+            'rol' => 4,
+            'estado' => true,
+        ]);
     }
 }

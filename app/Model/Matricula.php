@@ -10,7 +10,7 @@ class Matricula extends Model
     protected $primaryKey = 'id_matricula';
     public $timestamps = false;
 
-    protected $fillable = ['periodo', 'ano', 'curso', 'usuario'];
+    protected $fillable = ['periodo', 'ano', 'curso', 'usuario', 'nota'];
 
 
     public function user(){
