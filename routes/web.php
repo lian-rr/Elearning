@@ -24,13 +24,20 @@ Route::get('/home', 'HomeController@index');
 // ----------------------------------------USERS-----------------------------------------
 
 //List all users.
-Route::get('users', 'UserController@all');
+Route::get('/users', 'UserController@all');
 
 //Return the user information
 Route::get('users/{id}','UserController@find');
 
 //Return the user's login history
 Route::get('users/{id}/history','UserController@history');
+
+//Return new user view
+Route::get('users/user','UserController@new');
+
+Route::post('users/user','UserController@addUser');
+
+Route::post('users/update','UserController@update');
 
 // ----------------------------------------COURSES-----------------------------------------
 
@@ -55,3 +62,7 @@ Route::get('/courses/{id}/nenroll','MatriculaController@allUsers');
 
 //Enroll a user
 Route::post('/courses/{id}/enroll', 'MatriculaController@enroll');
+
+
+
+

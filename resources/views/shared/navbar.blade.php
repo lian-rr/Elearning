@@ -19,6 +19,9 @@
                 <li>
                     <a href="{{url('/courses')}}">Courses</a>
                 </li>
+                @if(Auth::user()->role->rol == 1)
+                    <li><a href="{{url('/users')}}">Users</a></li>
+                @endif
                 <li>
                     <a href="{{ route('logout') }}"
                        onclick="event.preventDefault();

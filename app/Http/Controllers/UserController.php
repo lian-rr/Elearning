@@ -9,12 +9,17 @@ use Illuminate\Http\Request;
 
 class UserController extends Controller
 {
+
+    public function new(){
+        return view('user.new');
+    }
+
     /**
      * Return all users
      * @return \Illuminate\Database\Eloquent\Collection|static[]
      */
     public function all(){
-        return Usuario::all();
+        return view('user.users',['users' => Usuario::all()]);
     }
 
     /**
@@ -23,7 +28,9 @@ class UserController extends Controller
      * @return mixed
      */
     public function find($id){
-        return Usuario::find($id);
+        $user = Usuario::find($id);
+
+        return view('user.update',['user' => $user, 'role' => $user->role]);
     }
 
     /**
@@ -42,5 +49,32 @@ class UserController extends Controller
      */
     public function rol($id){
         return UsuarioRol::find($id)->role;
+    }
+
+
+
+    public function addUser(Request $request){
+
+        dd($request->all());
+
+        $this->validator($request->all())->validate();
+
+        $user = $this->create($request->all());
+
+        return redirect(route('/home'));
+    }
+
+
+    protected function validator(array $data){
+
+    }
+
+    protected function create(array $data){
+
+    }
+
+
+    public function update(Request $request){
+        dd($request->all());
     }
 }
