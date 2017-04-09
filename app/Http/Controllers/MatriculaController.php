@@ -43,7 +43,7 @@ class MatriculaController extends Controller
     {
         $users = DB::table('usuario')
             ->where('curso', '=', $id)
-            ->leftJoin('matricula', 'usuario.id_usuario', '=', 'matricula.usuario')
+            ->join('matricula', 'usuario.id_usuario', '=', 'matricula.usuario','left outer')
             ->whereNull('matricula.usuario')
             ->select('usuario.id_usuario', 'usuario.nombre', 'usuario.genero',
                 'usuario.pais', 'usuario.lenguaje')
