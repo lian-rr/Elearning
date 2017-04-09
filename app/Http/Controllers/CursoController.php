@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Model\Curso;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 
 class CursoController extends Controller
@@ -16,7 +17,9 @@ class CursoController extends Controller
     public function courses()
     {
         return view('courses.courses',
-            ['courses' => $this->list()->where('estado', 'equal', true)]);
+            ['courses' => (Auth::user()->role->role > 2)
+                ? $this->list()->where('estado', 'equal', true)
+                : $this->list()]);
     }
 
 
@@ -72,6 +75,10 @@ class CursoController extends Controller
         return redirect('/courses');
     }
 
+    public function updateView($id)
+    {
+        return view('courses.update', ['course' => Curso::find($id)]);
+    }
 
     /**
      * Update a course information.
@@ -79,7 +86,16 @@ class CursoController extends Controller
      */
     public function update(Request $request)
     {
+//        dd($request->all());
+        $course = Curso::find($request->id);
 
+        $course->nombre = $request->name;
+        $course->descripcion = $request->description;
+        $course->estado = ($request->state == 1);
+
+        $course->save();
+
+        return redirect('/courses');
     }
 
 
@@ -112,7 +128,7 @@ class CursoController extends Controller
             'fecha_inicio' => date('Y-m-d', $initial),
             'fecha_final' => date('Y-m-d', $final),
             'descripcion' => $data['description'],
-            'duracion' => $this->datediffInWeeks($initial,$final),
+            'duracion' => $this->datediffInWeeks($initial, $final),
             'estado' => true,
         ]);
     }

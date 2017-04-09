@@ -20,6 +20,7 @@
                                               'start_date' => $course->fecha_inicio,
                                               'end_date' => $course->fecha_final,
                                               'duration' => $course->duracion,
+                                              'state' => $course->estado,
                                               'style' => $loop->index % 2 == 0,
                                              ])
                 @endcomponent

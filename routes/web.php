@@ -52,6 +52,12 @@ Route::post('/courses/course', 'CursoController@insert');
 //Return a course view
 Route::get('/courses/{id}','CursoController@course');
 
+Route::post('/courses/update','CursoController@update');
+
+Route::get('/courses/update/{id}','CursoController@updateView');
+
+
+
 //-------------------------------------------MATRICULA-----------------------------------------
 
 //Return list of users enrolled in a course.
