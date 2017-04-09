@@ -57,11 +57,11 @@ class UserController extends Controller
 
         dd($request->all());
 
-        $this->validator($request->all())->validate();
-
-        $user = $this->create($request->all());
-
-        return redirect(route('/home'));
+//        $this->validator($request->all())->validate();
+//
+//        $user = $this->create($request->all());
+//
+//        return redirect(route('/home'));
     }
 
 
@@ -75,6 +75,17 @@ class UserController extends Controller
 
 
     public function update(Request $request){
-        dd($request->all());
+        $user = Usuario::where('email',$request->email)->get()->first();
+        $usuarioRol = UsuarioRol::find($user->id_usuario);
+
+//        dd($request->role);
+
+        $user->nombre = $request->name;
+        $user->pais = $request->country;
+        $usuarioRol->rol = $request->role;
+
+        $user->save();
+        $usuarioRol->save();
+        return redirect('/users');
     }
 }

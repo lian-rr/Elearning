@@ -31,7 +31,7 @@
         </div>
 
         <div class="body">
-            <div class="body-section container col-md-10">
+            <div class="body-section container @if(Auth::user()->role->rol == 1)col-md-10 @endif">
                 <div class="body-header">
                     <h2 class="body-collection-title">Resources</h2>
                 </div>
@@ -41,11 +41,12 @@
                 </div>
             </div>
 
-
-            <div class="utilities col-md-2">
-                @component('components.utilities',['id' => $course->id_curso])
-                @endcomponent
-            </div>
+            @if(Auth::user()->role->rol == 1)
+                <div class="utilities col-md-2">
+                    @component('components.utilities',['id' => $course->id_curso])
+                    @endcomponent
+                </div>
+            @endif
         </div>
     </div>
 

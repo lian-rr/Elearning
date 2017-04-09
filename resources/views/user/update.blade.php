@@ -14,7 +14,8 @@
                                 <label for="name" class="col-md-4 control-label">Name</label>
 
                                 <div class="col-md-6">
-                                    <input id="name" type="text" class="form-control" name="name" value="{{ $user->nombre  }}" required autofocus>
+                                    <input id="name" type="text" class="form-control" name="name"
+                                           value="{{ $user->nombre  }}" required autofocus>
                                 </div>
                             </div>
 
@@ -22,36 +23,16 @@
                                 <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                                 <div class="col-md-6">
-                                    <input id="email" type="email" class="form-control" name="email" value="{{$user->email}}" disabled>
-                                </div>
-                            </div>
-
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label for="password" class="col-md-4 control-label">Password</label>
-
-                                <div class="col-md-6">
-                                    <input id="password" type="password" class="form-control" name="password">
-
-                                    @if ($errors->has('password'))
-                                        <span class="help-block">
-                                        <strong>{{ $errors->first('password') }}</strong>
-                                    </span>
-                                    @endif
-                                </div>
-                            </div>
-
-                            <div class="form-group">
-                                <label for="password_confirmation" class="col-md-4 control-label">Confirm Password</label>
-
-                                <div class="col-md-6">
-                                    <input id="password_confirmation" type="password" class="form-control" name="password_confirmation">
+                                    <input id="email" type="email" class="form-control" name="email"
+                                           value="{{$user->email}}" readonly>
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="gender" class="col-md-4 control-label">Gender</label>
                                 <div class="col-md-6">
-                                    <input id="gender" type="text" class="form-control" name="gender" value="{{$user->genero}}" disabled>
+                                    <input id="gender" type="text" class="form-control" name="gender"
+                                           value="{{$user->genero}}" readonly>
                                 </div>
                             </div>
 
@@ -59,14 +40,16 @@
                                 <label for="country" class="col-md-4 control-label">Country</label>
 
                                 <div class="col-md-6">
-                                    <input id="country" type="text" class="form-control" name="country" value="{{$user->pais}}" required>
+                                    <input id="country" type="text" class="form-control" name="country"
+                                           value="{{$user->pais}}">
                                 </div>
                             </div>
 
                             <div class="form-group">
                                 <label for="role" class="col-md-4 control-label">Role</label>
                                 <div class="col-md-6">
-                                    <select name="role" id="role" class="form-control" @if($role->rol == 1) disabled @endif>Administrator>
+                                    <select name="role" id="role" class="form-control"
+                                            @if($role->rol == 1) disabled @endif>Administrator>
                                         <option value="3" @if($role->rol == 3) selected @endif>Professor</option>
                                         <option value="4" @if($role->rol == 4) selected @endif>Student</option>
                                         <option value="2" @if($role->rol == 2) selected @endif>Moderator</option>
