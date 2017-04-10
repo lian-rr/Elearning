@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Model\Curso;
+use App\Model\Semana;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
@@ -30,7 +31,9 @@ class CursoController extends Controller
      */
     public function course($id)
     {
-        return view('courses.course', ['course' => $this->find($id)]);
+        return view('courses.course',
+            ['course' => $this->find($id)
+            ]);
 
     }
 
@@ -70,7 +73,9 @@ class CursoController extends Controller
     public function insert(Request $request)
     {
         $this->validator($request->all())->validate();
-        $this->create($request->all());
+        $course = $this->create($request->all());
+
+        $this->createWeeks($course);
 
         return redirect('/courses');
     }
@@ -141,11 +146,22 @@ class CursoController extends Controller
      */
     private function datediffInWeeks($date1, $date2)
     {
+//        dd($date1.' - '.$date2);
         if ($date1 > $date2)
             return $this->datediffInWeeks($date2, $date1);
-        $first = strtotime($date1);
-        $second = strtotime($date2);
-        return floor(($second - $first) / (60 * 60 * 24 * 7));
+        return floor(($date2 - $date1) / (60 * 60 * 24 * 7));
+    }
+
+    protected function createWeeks($course)
+    {
+        for ($i = 0; $i < $course->duracion;$i++){
+            Semana::create([
+                'tema' => 'Semana '.$i,
+                'visible' => true,
+                'estado' => true,
+                'curso' => $course->id_curso,
+            ]);
+        }
     }
 
 }

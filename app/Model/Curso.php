@@ -18,4 +18,8 @@ class Curso extends Model
     public function students(){
         return $this->hasMany('/App/Model/Matricula', 'curso');
     }
+
+    public function weeks(){
+        return $this->hasMany('/App/Model/Semana','curso');
+    }
 }
