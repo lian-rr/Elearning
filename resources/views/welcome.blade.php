@@ -7,7 +7,7 @@
                 Elearning
             </div>
 
-            <p>Chupa el perro</p>
+            <p>Learn all you can</p>
         </div>
     </div>
 @endsection
