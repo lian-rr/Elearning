@@ -17,5 +17,6 @@ class DatabaseSeeder extends Seeder
          $this->call(CursoSeeder::class);
          $this->call(MatriculaSeeder::class);
          $this->call(TipoRecursoSeeder::class);
+         $this->call(SemanaSeeder::class);
     }
 }

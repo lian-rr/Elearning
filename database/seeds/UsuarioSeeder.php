@@ -15,7 +15,7 @@ class UsuarioSeeder extends Seeder
            'nombre' => 'Administrador',
             'email' => 'admin@admin.ad',
             'password' => bcrypt('1234'),
-            'genero' => 'papu',
+            'genero' => 'male',
             'pais' => 'Costa Rica',
             'lenguaje' => 'español'
         ]);
@@ -24,7 +24,7 @@ class UsuarioSeeder extends Seeder
             'nombre' => 'Student',
             'email' => 'est@est.es',
             'password' => bcrypt('1234'),
-            'genero' => 'papu2',
+            'genero' => 'female',
             'pais' => 'Costa Rica',
             'lenguaje' => 'español'
         ]);

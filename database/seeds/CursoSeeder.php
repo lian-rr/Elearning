@@ -22,7 +22,7 @@ class CursoSeeder extends Seeder
                                 complete the review questions in a few minutes. 
                                 You can attempt the review questions as many times as 
                                 you like, and we will only use your highest score. ',
-            'duracion' => 12,
+            'duracion' => 3,
             'fecha_inicio' => date('Y-m-d', mktime(0, 0, 0, 5, 31, 2017)),
             'fecha_final' => date('Y-m-d', mktime(0, 0, 0, 8, 30, 2017)),
             'estado' => true
@@ -35,7 +35,7 @@ class CursoSeeder extends Seeder
                               I am an award-winning GIT grad, a 15+ year professional guitarist with 70k+ students, and the founder of Guitargate - sponsored by Paul Reed Smith Guitars. 
                 
                               "This course will teach you how to master your fretboard, understand music theory, and most importantly, how to use these tools to craft your own unique sound."',
-            'duracion' => 15,
+            'duracion' => 3,
             'fecha_inicio' => date('Y-m-d', mktime(0, 0, 0, 5, 31, 2017)),
             'fecha_final' => date('Y-m-d', mktime(0, 0, 0, 8, 30, 2017)),
             'estado' => true
