@@ -32,7 +32,8 @@ class CursoController extends Controller
     public function course($id)
     {
         return view('courses.course',
-            ['course' => $this->find($id)
+            ['course' => $this->find($id),
+                'weeks' => Semana::all()->where('curso', '=', $id),
             ]);
 
     }
@@ -146,17 +147,20 @@ class CursoController extends Controller
      */
     private function datediffInWeeks($date1, $date2)
     {
-//        dd($date1.' - '.$date2);
         if ($date1 > $date2)
             return $this->datediffInWeeks($date2, $date1);
         return floor(($date2 - $date1) / (60 * 60 * 24 * 7));
     }
 
+    /**
+     * Generate number of weeks for a new course.
+     * @param $course
+     */
     protected function createWeeks($course)
     {
-        for ($i = 0; $i < $course->duracion;$i++){
+        for ($i = 0; $i < $course->duracion; $i++) {
             Semana::create([
-                'tema' => 'Semana '.$i,
+                'tema' => 'Semana ' . ($i+1),
                 'visible' => true,
                 'estado' => true,
                 'curso' => $course->id_curso,

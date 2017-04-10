@@ -36,8 +36,11 @@
                     <h2 class="body-collection-title">Resources</h2>
                 </div>
 
-                <div class="body-body row">
-                    {{--TODO Resorces component. Check courses/courses.blade.php and components/box.blade.php--}}
+                <div class="body-body col-md-10 col-md-offset-1 container">
+                    @foreach($weeks as $week)
+                        @component('components.weeks',['title' => $week->tema])
+                        @endcomponent
+                    @endforeach
                 </div>
             </div>
 

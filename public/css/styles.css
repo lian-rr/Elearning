@@ -136,6 +136,10 @@ a.page-title{
     margin-bottom: 30px;
 }
 
+.week > .week-heading{
+    border-bottom: 1px solid;
+}
+
 footer{
     background: #e8eaed;
     padding: 0.5% 0;
